@@ -23,8 +23,8 @@ public class ProblemSet3 {
 		ProblemSet3 ps3 = new ProblemSet3();		
 			
 		ps3.dateFashion(0, 0);
-		ps3.fizzString(null);
-		ps3.squirrelPlay(0, false);
+		ps3.fizzString("fig");
+		ps3.squirrelPlay(95, false);
 		ps3.fizzStringAgain(0);
 		ps3.makeBricks(0, 0, 0);
 		ps3.loneSum(0, 0, 0);
@@ -62,15 +62,18 @@ public class ProblemSet3 {
 	public void fizzString(String str) {
 		if (str.contains("f"))
 		{
-			
+			if (str.endsWith("b")) 
+			{
+				System.out.println("FIZZBUZZ");
+			}
+			else 
+			{
+				System.out.println("FIZZ");
+			}
 		}
-		else if (str = "dib")
+		else if (str.endsWith("b"))
 		{
-			
-		}
-		else if (str = "fib")
-		{
-			
+			System.out.println("BUZZ");
 		}
 		else 
 		{
@@ -79,7 +82,23 @@ public class ProblemSet3 {
 	}
 		
 	public void squirrelPlay(int temp, boolean isSummer) {
-		
+		if (isSummer == true)
+		{
+			if (temp >= 60 && temp <= 100) {
+				System.out.println("YES");
+			}
+			else {
+				System.out.println("NO");
+			}
+		}
+		else {
+			if (temp >= 60 && temp <= 90) {
+				System.out.println("YES");
+			}
+			else {
+				System.out.println("NO");
+			}
+		}
 	}
 	
 	public void fizzStringAgain(int n) {
