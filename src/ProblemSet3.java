@@ -25,13 +25,13 @@ public class ProblemSet3 {
 		ps3.dateFashion(0, 0);
 		ps3.fizzString("fig");
 		ps3.squirrelPlay(95, false);
-		ps3.fizzStringAgain(0);
-		ps3.makeBricks(0, 0, 0);
-		ps3.loneSum(0, 0, 0);
-		ps3.luckySum(0, 0, 0);
-		ps3.factorialWithFor(0);
-		ps3.factorialWithWhile(0);
-		ps3.isPrime(0);
+		ps3.fizzStringAgain(15);
+		ps3.makeBricks(3, 1, 10);
+		ps3.loneSum(4, 7, 5);
+		ps3.luckySum(11, 6, 5);
+		ps3.factorialWithFor(5);
+		ps3.factorialWithWhile(3);
+		ps3.isPrime(174);
 		
 	}
 		
@@ -102,31 +102,109 @@ public class ProblemSet3 {
 	}
 	
 	public void fizzStringAgain(int n) {
-		
+		if (n < 0) {
+			System.out.println("INVALID INPUT");
+		}
+		else {
+			
+			if (n % 3 == 0 && n % 5 == 0) {
+				System.out.println("FIZZBUZZ!");
+			}
+			else if (n % 3 == 0) {
+				System.out.println("FIZZ!");
+			}
+			else if (n % 5 == 0) {
+				System.out.println("BUZZ!");
+			}
+			else {
+				System.out.println(n + "!");
+			}
+}
 	}
 	
 	public void makeBricks(int small, int big, int goal) {
-		
+		if (small < 0 || big < 0 || goal < 0) {
+			System.out.println("INVALID INPUT.");
+		}
+		else {
+			int newBig = 0; 
+			if (big > (goal / 5)) {
+				newBig = (goal / 5);
+			}
+			else {
+				newBig = big; 
+			}
+			
+			goal -= newBig * 5;
+			if (goal <= small) {
+				System.out.println("YES.");
+			} else {
+				System.out.println("NO.");
+			}			
+}
 	}
 	
 	public void loneSum(int a, int b, int c) {
-		
+		if (a == b) {
+			
+			if (b == c) {
+				System.out.print(0);
+			}
+			else {
+				System.out.print(c);
+			}
+		}
+		else if (a == c) {
+			System.out.print(b);
+		}
+		else if (b == c) {
+			System.out.print(a);
+		}
+		else {
+			System.out.print(a + b + c);
+		}
+		System.out.println(".");
 	}
 	
 	public void luckySum(int a, int b, int c) {
+		int[] input = {a, b, c};
+		int sum = 0;
 		
+		for (int i = 0; i < 3; i++) {
+			if (input[i] == 13) break;
+			sum += input[i];
+		}
+		
+		System.out.println(sum + ".");
 	}
 	
 	public void factorialWithFor(int n) {
-		
+		int test = n;
+		for (int i = 1; i < test; i++) {
+			n *= i;
+		}	
+		System.out.println(n); 
 	}
+
 	
 	public void factorialWithWhile(int n) {
-		
+		int test1 = n; 
+		int g = 1; 
+		while (g < test1) {
+			n *= g;
+			g++;
+		}
+		System.out.println(test1 + "! = " + n);
 	}
 	
 	public void isPrime(int n) {
 		
+		if ((n % 2 == 0 && n != 2)|| (n % 5 == 0 && n !=5) || (n % 3 == 0 && n != 3)) {
+			System.out.println("NO");
+		}
+		else {
+			System.out.println("YES");
+		}
 	}
 	
 }
